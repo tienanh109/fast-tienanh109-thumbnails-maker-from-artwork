@@ -5,7 +5,7 @@ Just a thumbnail maker made by tienanh109, j4f using Python (Pillow)
 
 0. Download Python and run:
 ```sh
-pip install Pillow
+pip install pillow
 ```
 1. Download the python file in my repo
 2. Drop your artwork to that Python file
