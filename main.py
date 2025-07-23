@@ -1,4 +1,4 @@
-// Made by tienanh109 with Python (Pillow)
+# Made by tienanh109 with Python (Pillow)
 from PIL import Image, ImageFilter, ImageDraw
 import sys
 import os
@@ -15,7 +15,7 @@ def create_wallpaper(input_path, output_path='output.png',
     input_width, input_height = img.size
     base_width, base_height = base_size
 
-    # Resize ảnh nền (cover)
+    
     scale = max(base_width / input_width, base_height / input_height)
     bg_img = img.resize((int(input_width * scale), int(input_height * scale)))
     bg_img = bg_img.crop((
@@ -26,7 +26,7 @@ def create_wallpaper(input_path, output_path='output.png',
     ))
     bg_img = bg_img.filter(ImageFilter.GaussianBlur(blur_radius))
 
-    # Resize ảnh chính nhỏ hơn để đặt giữa
+  
     fg_margin_w = int(base_width * margin_percent)
     fg_margin_h = int(base_height * margin_percent)
     fg_width = base_width - 2 * fg_margin_w
@@ -35,7 +35,7 @@ def create_wallpaper(input_path, output_path='output.png',
     scale_fg = min(fg_width / input_width, fg_height / input_height)
     fg_img = img.resize((int(input_width * scale_fg), int(input_height * scale_fg)))
 
-    # Tạo bóng đổ
+
     shadow = Image.new("RGBA", (fg_img.width + shadow_offset*2, fg_img.height + shadow_offset*2), (0, 0, 0, 0))
     shadow_draw = ImageDraw.Draw(shadow)
     shadow_draw.rectangle(
@@ -43,7 +43,7 @@ def create_wallpaper(input_path, output_path='output.png',
         fill=(0, 0, 0, 100)
     )
 
-    # Tạo nền và ghép ảnh
+
     background = Image.new("RGBA", base_size)
     background.paste(bg_img, (0, 0))
     center_x = (base_width - fg_img.width) // 2
