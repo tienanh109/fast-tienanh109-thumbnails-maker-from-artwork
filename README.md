@@ -15,4 +15,4 @@ pip install pillow
 
 - This simple program is using Python (with Pillow) to running, make sure you have installed Python and Pillow library.
 - This program just made for fun, no other intention, not a complete and perfect tool.
-- No credits requires
+- No author credits requires
